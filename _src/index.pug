@@ -1,0 +1,77 @@
+//- #########################################################
+
+	ファイル概要：テンプレートファイル
+
+	#########################################################
+
+//- サイト共通レイアウトファイルを継承
+extends _layout.pug
+
+//- _layout.pugのvarsを再定義
+block vars
+	//- サイト全体の設定ファイルの読み込み
+	include _config.pug
+	//- ページ用変数を設定
+	- 
+		//- ページID
+		var id = "index"
+		//- ページ設定
+		var page = {
+			url : "/" + id + '.html',
+			title : '',
+			description : '',
+			keywords : '',
+			image : image_path + '/ogp.jpg',
+			//- Facebook-App-ID：
+			fbappid : '',
+			//- Facebook-Facebookの個人アカウントにリレーションしているID（必要なければ設定しない）：
+			fbadmins : '',
+			//- Twitterカード-カードの種類：summary/summary_large_image/photo/gallery/app
+			twcard : 'summary_large_image',
+			//- Twitterカード-Twitterユーザ名：@ユーザー名
+			twsite : ''
+		}
+		//- CSSファイル名
+		var cssfile = 'style.css'
+		//- JSファイル名
+		var jsfile = id + '.js'
+
+//- _layout.pugのcontentsを再定義
+block contents
+	main
+		//- article:独立した記事
+		article
+			h1 h1
+			section
+				h2 h2
+				h3 h3
+				h4 h4
+				h5 h5
+				h6 h6
+		//- 記事一覧
+		.article-list
+			ul
+				li
+					span.arrow.-up
+				li
+					span.arrow.-right
+				li
+					span.arrow.-down
+				li
+					span.arrow.-left
+				li
+					span.arrow.-openup
+				li
+					span.arrow.-openright
+				li
+					span.arrow.-opendown
+				li
+					span.arrow.-openleft
+		//- aside:コンテンツに関連しつつ、切り離し可能なセクション
+		aside
+			p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+				br
+				| テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+			p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+				br
+				| テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
